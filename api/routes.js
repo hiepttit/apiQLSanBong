@@ -1,4 +1,5 @@
 let UsersCtrl = require('./Controllers/UsersController');
+let CustomersCtrl = require('./Controllers/CustomersController');
 module.exports = function(app) {
     // todoList Routes
     app.route('/Users')
@@ -9,4 +10,7 @@ module.exports = function(app) {
       .get(UsersCtrl.detail)
       .put(UsersCtrl.update)
       .delete(UsersCtrl.delete);
+
+      app.route('/Customers')
+      .get(CustomersCtrl.get)
   };

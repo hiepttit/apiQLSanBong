@@ -2,7 +2,7 @@ var mysql=require('mysql');
 var connection=mysql.createConnection({
     host: "remotemysql.com",
     user: "SdZvIjNHHX",
-    password: "pJFWEotgwC",
+    password: "hOndPDyaMK",
     database: "SdZvIjNHHX"
 });
 module.exports=connection;

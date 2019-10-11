@@ -9,5 +9,5 @@ app.use(function(req, res) {
 })
 
 app.listen(5000, function () {
-  console.log('Server is running..');
+  console.log('Server is running....');
 });

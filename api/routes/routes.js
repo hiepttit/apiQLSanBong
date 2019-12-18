@@ -55,5 +55,5 @@ module.exports = function (app) {
     .put(big_pitchCtrl.update)
     .delete(big_pitchCtrl.delete);
   app.route('/bigpitch/children/:ID')
-    .get(small_pitchCtrl.findByIdBigPitch)
+    .get(small_pitchCtrl.findByIdBigPitch);
 };

@@ -44,7 +44,7 @@ module.exports = {
     },
     search: (req, res) => {
         const name = req.query.name;
-        let sql = 'SELECT * FROM big_pitch WHERE name like "%'+name+'%" '
+        let sql = "SELECT * FROM big_pitch WHERE name like '%'+name+'%' "
         db.query(sql, (err, response) => {
             if (err) throw err
             res.json(response)

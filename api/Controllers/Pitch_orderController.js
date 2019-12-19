@@ -41,5 +41,15 @@ module.exports = {
             if (err) throw err
             res.json({message: 'Delete success!'})
         })
+    },
+    findPitch: (req, res) => {
+        const date = req.query.date;
+        const startTime=req.query.startTime;
+        const endTime=req.query.endTime;
+        let sql = 'SELECT * FROM small_pitch WHERE id not in (SELECT small_pitch.id FROM pitch_order, small_pitch WHERE small_pitch.id = pitch_order.id_pitch AND CAST("'+date+'" AS DATE) = CAST(pitch_order.start_time as DATE) AND CAST(start_time AS TIME) BETWEEN CAST("'+startTime+'" AS TIME) AND CAST("'+endTime+'" AS TIME) GROUP BY small_pitch.id_big_pitch)'
+        db.query(sql, (err, response) => {
+            if (err) throw err
+            res.json(response)
+        })
     }
 }

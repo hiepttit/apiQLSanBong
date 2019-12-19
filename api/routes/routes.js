@@ -19,7 +19,9 @@ module.exports = function (app) {
   app.route('/smallpitch')
     .get(small_pitchCtrl.get)
     .post(small_pitchCtrl.store);
-
+  app.route('/smallpitch/findPitch')
+    .get(pitch_orderCtrl.findPitch)
+    
   app.route('/smallpitch/:ID')
     .get(small_pitchCtrl.detail)
     .put(small_pitchCtrl.update)
